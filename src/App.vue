@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <v-app-bar app color="#6F2B45" dark>
+      <v-img
+        src="./assets/logo.png" 
+        alt="Logo"
+        max-width="40"
+        class="mr-3"
+      ></v-img>
+      <v-toolbar-title>Proyecto de ejemplo</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn text to="/" router>Home</v-btn>
+      <v-btn text to="/inventory" router>Inventario</v-btn>
+      <v-btn text to="/Reactive" router>Reactivo</v-btn>
+      <v-btn text to="/list" router>Lista de Tareas</v-btn>
+      <v-btn text to="/shopping" router>Compras</v-btn>
+      <v-btn text to="/about" router>Acerca de</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <v-container class="mt-5" style="background-color: #f4f4f4; padding: 20px; border-radius: 10px;">
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #FBE8E4; 
+}
+
+.v-btn {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 </style>
